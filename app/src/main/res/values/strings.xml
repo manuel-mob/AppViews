@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">App Views</string>
+    <string name="button_color">Go Red</string>
+    <string name="button_listview">List View</string>
+    <string name="button_list_adapter">Custom Adapter - List View</string>
+    <string name="button_change_simpleadapter">Go To SimpleAdapter - List View</string>
+    <string name="button_change_arrayadapter">Go To ArrayAdapter - List View</string>
+    <string name="button_gridview">Grid View</string>
+</resources>

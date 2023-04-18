@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/idLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_700"
+    android:onClick="setRedBackground"
+    android:orientation="vertical"
+    android:padding="40dp">
+
+    <Button
+        android:id="@+id/idRed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_red_dark"
+        android:maxWidth="320dp"
+        android:onClick="setRedBackground"
+        android:text="@string/button_color"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="320dp"
+        android:onClick="goToListViewExample"
+        android:text="@string/button_listview" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="320dp"
+        android:onClick="goToListViewCustomAdapterExample"
+        android:text="@string/button_list_adapter" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="320dp"
+        android:onClick="goToGridViewExample"
+        android:text="@string/button_gridview" />
+
+    <Button
+        android:id="@+id/cardButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goToCardViewExample"
+        android:text="Button" />
+
+    <SeekBar
+        android:id="@+id/idSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="255"
+        android:progress="0" />
+
+</LinearLayout>
