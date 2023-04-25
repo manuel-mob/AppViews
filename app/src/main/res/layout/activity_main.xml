@@ -47,13 +47,32 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="goToCardViewExample"
-        android:text="Button" />
+        android:text="@string/button_cardview" />
+
+    <Button
+        android:id="@+id/idProductListButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goToProductsExample"
+        android:text="@string/button_goproducts" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goToFragmentExample"
+        android:text="@string/button_fragment" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showDialog"
+        android:text="@string/button_showdialog" />
 
     <SeekBar
         android:id="@+id/idSeekBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="255"
-        android:progress="0" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

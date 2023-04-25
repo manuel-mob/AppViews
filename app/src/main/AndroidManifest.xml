@@ -12,6 +12,18 @@
         android:theme="@style/Theme.AppViews"
         tools:targetApi="31">
         <activity
+            android:name=".ProductFragmentMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NavegationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductInventary"
+            android:exported="false" />
+        <activity
             android:name=".ExampleCardView"
             android:exported="false" />
         <activity
