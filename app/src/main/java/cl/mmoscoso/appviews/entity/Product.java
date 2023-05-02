@@ -1,11 +1,18 @@
 package cl.mmoscoso.appviews.entity;
 
+import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Date;
+
+import cl.mmoscoso.appviews.R;
 
 public class Product implements Parcelable {
     int id;
@@ -28,6 +35,14 @@ public class Product implements Parcelable {
         this.quantity = quantity;
         this.expiration = expiration;
         this.lastPlace = lastPlace;
+    }
+    public Product(int id, String name, int amount, int quantity, Date expiration) {
+        this.id = id;
+        this.name = name;
+        this.amount = amount;
+        this.quantity = quantity;
+        this.expiration = expiration;
+        this.lastPlace = "";
     }
     protected Product(Parcel in) {
         id = in.readInt();
@@ -113,4 +128,49 @@ public class Product implements Parcelable {
             return new Product[size];
         }
     };
+
+    public static class CreateProductActivityDB extends AppCompatActivity {
+
+        private EditText name;
+        private EditText amount;
+        private EditText quantity;
+
+        Product product;
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_create_product);
+
+
+            name = (EditText)findViewById(R.id.editName);
+            amount = (EditText)findViewById(R.id.editAmount);
+            quantity = (EditText)findViewById(R.id.editQuantity);
+
+
+            // check if the product class hasExtra
+            if (getIntent().hasExtra("PRODUCT")) {
+                product = getIntent().getParcelableExtra("PRODUCT");
+            }
+
+            if (product != null) {
+                name.setText(product.getName());
+                amount.setText(Integer.toString(product.getAmount()));
+                quantity.setText(Integer.toString(product.getQuantity()));
+            }
+
+        }
+
+        public void getInformationFromEditText(View view){
+            Product newProduct = new Product();
+            newProduct.setName(name.getText().toString());
+            newProduct.setAmount(Integer.valueOf(amount.getText().toString()));
+            newProduct.setQuantity(Integer.valueOf(quantity.getText().toString()));
+            newProduct.setExpiration(new Date());
+
+            Toast.makeText(this,"Agregado:"+newProduct.getName(), Toast.LENGTH_LONG).show();
+
+
+        }
+    }
 }

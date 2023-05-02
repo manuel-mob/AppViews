@@ -49,5 +49,4 @@ public class ExampleListViewCustomAdapter extends AppCompatActivity {
 
     }
 
-
 }

@@ -11,5 +11,26 @@
     <string name="button_fragment">Go to Fragment</string>
     <string name="button_cardview">Go to CardView</string>
     <string name="button_showdialog">Show me the dialog</string>
+    <string name="button_pref">Go to Preferences</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+    <string name="order_header">Order by</string>
+    <string name="day_header">Day for shopping</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+    <string name="order_title">Order by options</string>
+    <string name="day_title">Day for reminder</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>

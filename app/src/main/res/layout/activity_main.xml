@@ -70,6 +70,13 @@
         android:onClick="showDialog"
         android:text="@string/button_showdialog" />
 
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goToPreferences"
+        android:text="@string/button_pref" />
+
     <SeekBar
         android:id="@+id/idSeekBar"
         android:layout_width="match_parent"

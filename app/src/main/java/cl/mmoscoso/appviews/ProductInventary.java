@@ -4,10 +4,14 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -18,6 +22,8 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import cl.mmoscoso.appviews.adapters.ProductAdapter;
+import cl.mmoscoso.appviews.adapters.ProductoBaseAdapter;
+import cl.mmoscoso.appviews.controller.DBManager;
 import cl.mmoscoso.appviews.entity.Product;
 
 public class ProductInventary extends AppCompatActivity {
@@ -25,6 +31,10 @@ public class ProductInventary extends AppCompatActivity {
     ListView productList;
     ArrayList<Product> listProducts = new ArrayList<>();
     Product tempProduct;
+
+    private DBManager dbManager;
+
+    int option = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +50,24 @@ public class ProductInventary extends AppCompatActivity {
         this.listProducts.add(tempProduct);
 
 
+        //Getting information from DATABASE
+        dbManager = new DBManager(this);
+        dbManager.open();
+        Cursor cursor = dbManager.fetch();
+
+        while (cursor.moveToNext()) {
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+            String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+            int amount = cursor.getInt(cursor.getColumnIndexOrThrow("amount"));
+            int quantity = cursor.getInt(cursor.getColumnIndexOrThrow("quantity"));
+
+            tempProduct = new Product(id, name, amount, quantity, new Date());
+            // add the product to a list or do something with it
+            this.listProducts.add(tempProduct);
+        }
+
+
+
         ProductAdapter adapter = new ProductAdapter(this,listProducts);
         productList.setAdapter(adapter);
 
@@ -50,6 +78,14 @@ public class ProductInventary extends AppCompatActivity {
             }
         });
 
+
+        //Get preferences
+        SharedPreferences myPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String day = myPreferences.getString("day_preference","0");
+        Log.i("ProductInventory","Product preferences day:" + day );
+        Toast.makeText(this,"Day : " + day, Toast.LENGTH_LONG).show();
+
+
     }
 
     public void createProduct(View view){
@@ -57,6 +93,18 @@ public class ProductInventary extends AppCompatActivity {
         tempProduct = new Product(1,"Coca Cola 3L",1590,4,new Date(),"Lider Express");
         createProduct.putExtra("PRODUCT", tempProduct);
         startActivity(createProduct);
+    }
+    public void changeAdapter(View view){
+        if (option == 1 ) {
+            ProductoBaseAdapter adapter = new ProductoBaseAdapter(this,listProducts);
+            productList.setAdapter(adapter);
+            option = 0;
+        }
+        else {
+            ProductAdapter adapter = new ProductAdapter(this,listProducts);
+            productList.setAdapter(adapter);
+            option = 1;
+        }
     }
 
 }

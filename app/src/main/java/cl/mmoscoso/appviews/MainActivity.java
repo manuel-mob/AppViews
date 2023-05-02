@@ -102,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(fragmentActivity);
     }
 
+    public void goToPreferences(View view){
+        Intent prefActivity = new Intent(MainActivity.this,SettingsActivity.class);
+        startActivity(prefActivity);
+    }
+
     public void showDialog(View view){
         // Create a new dialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
