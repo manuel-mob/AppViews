@@ -12,6 +12,9 @@
         android:theme="@style/Theme.AppViews"
         tools:targetApi="31">
         <activity
+            android:name=".TypeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProductInventaryPersistent"
             android:exported="false" />
         <activity

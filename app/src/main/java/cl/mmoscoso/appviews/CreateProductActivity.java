@@ -72,7 +72,7 @@ public class CreateProductActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.id_create:
-                Long rowId = dbManager.insert(name.getText().toString(), Integer.valueOf(amount.getText().toString()),Integer.valueOf(quantity.getText().toString()));
+                Long rowId = dbManager.insertProduct(name.getText().toString(), Integer.valueOf(amount.getText().toString()),Integer.valueOf(quantity.getText().toString()));
                 if (rowId != null){
                     Toast.makeText(this,"Product saved",Toast.LENGTH_LONG).show();
                     this.finish();

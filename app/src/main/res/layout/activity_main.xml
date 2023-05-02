@@ -55,6 +55,12 @@
         android:layout_height="wrap_content"
         android:onClick="goToProductsExample"
         android:text="@string/button_goproducts" />
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goType"
+        android:text="@string/button_gotype" />
 
     <Button
         android:id="@+id/button7"

@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.util.Date;
-
 public class DBManager {
     private ProductDatabaseController dbHelper;
 
@@ -29,7 +27,7 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(String name, Integer amount, Integer quantity, String expiration) {
+    public void insertProduct(String name, Integer amount, Integer quantity, String expiration) {
         ContentValues contentValue = new ContentValues();
         contentValue.put("name", name);
         contentValue.put("amount", amount);
@@ -38,7 +36,7 @@ public class DBManager {
         database.insert(dbHelper.TABLE_NAME, null, contentValue);
     }
 
-    public Long insert(String name, Integer amount, Integer quantity) {
+    public Long insertProduct(String name, Integer amount, Integer quantity) {
         ContentValues contentValue = new ContentValues();
         contentValue.put("name", name);
         contentValue.put("amount", amount);

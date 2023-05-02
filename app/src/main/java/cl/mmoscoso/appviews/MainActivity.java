@@ -107,6 +107,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(prefActivity);
     }
 
+    public void goType(View view){
+        Intent typeActivity = new Intent(MainActivity.this,TypeActivity.class);
+        startActivity(typeActivity);
+    }
+
     public void showDialog(View view){
         // Create a new dialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

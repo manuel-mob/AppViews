@@ -7,6 +7,7 @@
     <string name="button_change_arrayadapter">Go To ArrayAdapter - List View</string>
     <string name="button_gridview">Grid View</string>
     <string name="button_goproducts">Go to Product List</string>
+    <string name="button_gotype">Go Type Products</string>
     <string name="button_newproduct">Create</string>
     <string name="button_fragment">Go to Fragment</string>
     <string name="button_cardview">Go to CardView</string>
