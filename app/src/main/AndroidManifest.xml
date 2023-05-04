@@ -12,6 +12,16 @@
         android:theme="@style/Theme.AppViews"
         tools:targetApi="31">
         <activity
+            android:name=".NavigationProductsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_navigation_products"
+            android:theme="@style/Theme.AppViews.NoActionBar" />
+        <activity
+            android:name=".ListProductActivity"
+            android:exported="false"
+            android:label="@string/title_activity_list_product"
+            android:theme="@style/Theme.AppViews.NoActionBar" />
+        <activity
             android:name=".TypeActivity"
             android:exported="false" />
         <activity

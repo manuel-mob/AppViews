@@ -30,6 +30,10 @@ public class ProductInventary extends AppCompatActivity {
 
     ListView productList;
     ArrayList<Product> listProducts = new ArrayList<>();
+
+    ArrayList<Product> shoppingList = new ArrayList<>();
+
+
     Product tempProduct;
 
     private DBManager dbManager;
@@ -75,6 +79,23 @@ public class ProductInventary extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 tempProduct = (Product) parent.getItemAtPosition(position);
+
+                if ( shoppingList.contains(tempProduct) ) {
+                    Log.i("ProductInventary","Product exists:" + tempProduct.getName());
+                    int quantity = shoppingList.get(shoppingList.indexOf(tempProduct)).getQuantity();
+                    quantity = quantity + 1;
+                    shoppingList.get(shoppingList.indexOf(tempProduct)).setQuantity(quantity);
+                }
+                else {
+                    Log.i("ProductInventary","Product not exists:" + tempProduct.getName());
+                    //Cantidad = 1
+                    tempProduct.setQuantity(1);
+                    shoppingList.add(tempProduct);
+                }
+
+                //Toast.makeText(ProductInventary.this,"Product for Shopping is:" + tempProduct.getName(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(ProductInventary.this,"I will shopping "+ String.valueOf(shoppingList.size()) + " products",Toast.LENGTH_LONG).show();
+                Log.i("ProductInventary","Detail:" + getFullDetailOfShopping());
             }
         });
 
@@ -86,6 +107,16 @@ public class ProductInventary extends AppCompatActivity {
         Toast.makeText(this,"Day : " + day, Toast.LENGTH_LONG).show();
 
 
+    }
+
+    private String getFullDetailOfShopping(){
+        String resultText = "";
+        int index = 0;
+        while (index < shoppingList.size()) {
+            resultText = resultText + "P:"+ shoppingList.get(index).getName() +"("+String.valueOf(shoppingList.get(index).getQuantity()) +"), ";
+            index = index + 1;
+        }
+        return resultText;
     }
 
     public void createProduct(View view){
@@ -106,5 +137,4 @@ public class ProductInventary extends AppCompatActivity {
             option = 1;
         }
     }
-
 }

@@ -89,6 +89,8 @@ public class ExampleListView extends AppCompatActivity {
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         String selectedItem = (String) parent.getItemAtPosition(position);
                         Toast.makeText(getApplicationContext(), "Selected item: " + selectedItem, Toast.LENGTH_SHORT).show();
+
+
                     }
                 });
                 break;

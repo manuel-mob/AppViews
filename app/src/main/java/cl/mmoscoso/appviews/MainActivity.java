@@ -112,6 +112,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(typeActivity);
     }
 
+    public void goToNewList(View view){
+        Intent listNewProducts = new Intent(MainActivity.this,ListProductActivity.class);
+        startActivity(listNewProducts);
+    }
+
+    public void goToNavigation(View view){
+        Intent NavigationProducts = new Intent(MainActivity.this,NavigationProductsActivity.class);
+        startActivity(NavigationProducts);
+    }
+
+
     public void showDialog(View view){
         // Create a new dialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
