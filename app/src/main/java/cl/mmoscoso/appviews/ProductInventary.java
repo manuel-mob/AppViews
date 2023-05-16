@@ -25,14 +25,17 @@ import cl.mmoscoso.appviews.adapters.ProductAdapter;
 import cl.mmoscoso.appviews.adapters.ProductoBaseAdapter;
 import cl.mmoscoso.appviews.controller.DBManager;
 import cl.mmoscoso.appviews.entity.Product;
+import cl.mmoscoso.appviews.entity.ProductList;
 
 public class ProductInventary extends AppCompatActivity {
 
+    String tagLog = "ProductInventary";
     ListView productList;
     ArrayList<Product> listProducts = new ArrayList<>();
 
     ArrayList<Product> shoppingList = new ArrayList<>();
 
+    ProductList shopList;
 
     Product tempProduct;
 
@@ -53,6 +56,9 @@ public class ProductInventary extends AppCompatActivity {
         tempProduct = new Product(1,"Leche",1230,12,new Date(),"Lider Express");
         this.listProducts.add(tempProduct);
 
+
+        shopList = new ProductList("Desayunos",4000);
+        Log.i(tagLog,"Lista creada:" + shopList.getName());
 
         //Getting information from DATABASE
         dbManager = new DBManager(this);
@@ -80,7 +86,10 @@ public class ProductInventary extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 tempProduct = (Product) parent.getItemAtPosition(position);
 
-                if ( shoppingList.contains(tempProduct) ) {
+                if ( shopList.addProduct(tempProduct) ) {
+                    Log.i("ProductInventory","Producto agregado, lista contiene:"+String.valueOf(shopList.getShopping().size()));
+                }
+/*                if ( shoppingList.contains(tempProduct) ) {
                     Log.i("ProductInventary","Product exists:" + tempProduct.getName());
                     int quantity = shoppingList.get(shoppingList.indexOf(tempProduct)).getQuantity();
                     quantity = quantity + 1;
@@ -92,10 +101,27 @@ public class ProductInventary extends AppCompatActivity {
                     tempProduct.setQuantity(1);
                     shoppingList.add(tempProduct);
                 }
-
+*/
                 //Toast.makeText(ProductInventary.this,"Product for Shopping is:" + tempProduct.getName(),Toast.LENGTH_LONG).show();
                 //Toast.makeText(ProductInventary.this,"I will shopping "+ String.valueOf(shoppingList.size()) + " products",Toast.LENGTH_LONG).show();
                 Log.i("ProductInventary","Detail:" + getFullDetailOfShopping());
+            }
+        });
+
+        productList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                tempProduct = (Product) parent.getItemAtPosition(position);
+                Toast.makeText(ProductInventary.this,"I Will update the quantity of " + tempProduct.getName(), Toast.LENGTH_LONG).show();
+                //We must know: id, quantity of product.
+                //Log.i("ProductInventary","Product ID:"+String.valueOf(tempProduct.getId()));
+                //Log.i("ProductInventary","Product new Quantity ++:"+String.valueOf(shoppingList.get(shoppingList.indexOf(tempProduct)).getQuantity()));
+                Log.i(tagLog,shopList.toString());
+                //Update
+                //Long rowId = dbManager.update(tempProduct.getId(), Integer.valueOf(amount.getText().toString()),Integer.valueOf(quantity.getText().toString()));
+
+                return false;
             }
         });
 
