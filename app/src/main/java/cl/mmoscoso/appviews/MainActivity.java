@@ -121,7 +121,10 @@ public class MainActivity extends AppCompatActivity {
         Intent NavigationProducts = new Intent(MainActivity.this,NavigationProductsActivity.class);
         startActivity(NavigationProducts);
     }
-
+    public void goToRecycle(View view){
+        Intent RecycleExample = new Intent(MainActivity.this,ExampleRecyclerView.class);
+        startActivity(RecycleExample);
+    }
 
     public void showDialog(View view){
         // Create a new dialog builder

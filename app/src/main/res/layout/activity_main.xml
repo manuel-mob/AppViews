@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
     android:id="@+id/idLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -103,6 +103,13 @@
         android:onClick="goToNavigation"
         android:text="@string/button_navigation" />
 
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goToRecycle"
+        android:text="@string/button_recycle" />
 
     <SeekBar
         android:id="@+id/idSeekBar"

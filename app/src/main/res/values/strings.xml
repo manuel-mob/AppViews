@@ -15,6 +15,7 @@
     <string name="button_pref">Go to Preferences</string>
     <string name="button_newlist">Go to new List of Products</string>
     <string name="button_navigation">Go to Navigation</string>
+    <string name="button_recycle">Go to Recycle Example</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
