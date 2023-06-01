@@ -111,6 +111,13 @@
         android:onClick="goToRecycle"
         android:text="@string/button_recycle" />
 
+    <Button
+        android:id="@+id/buttonHttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goHttpRequest"
+        android:text="@string/button_httprequest" />
+
     <SeekBar
         android:id="@+id/idSeekBar"
         android:layout_width="match_parent"

@@ -126,6 +126,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(RecycleExample);
     }
 
+    public void goHttpRequest(View view){
+        Intent HttpRequestActivity = new Intent(MainActivity.this,HTTPRequestActivity.class);
+        startActivity(HttpRequestActivity);
+    }
+
     public void showDialog(View view){
         // Create a new dialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
