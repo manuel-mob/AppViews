@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">App View</string>
+    <string name="button_color">Cambiar a rojo</string>
+    <string name="button_listview">Vista de lista</string>
+    <string name="button_list_adapter">Adaptador personalizado - List View</string>
+    <string name="button_change_simpleadapter">Ir a SimpleAdapter - ListView</string>
+    <string name="button_change_arrayadapter">Ir a ArrayAdapter - ListView</string>
+    <string name="button_gridview">Vista de Grilla</string>
+    <string name="button_goproducts">Ir a ProductList</string>
+    <string name="button_gotype">Ir a Tipos de Productos</string>
+    <string name="button_newproduct">Crear</string>
+    <string name="button_fragment">Ir a Fragment</string>
+    <string name="button_cardview">Ir a CardView</string>
+    <string name="button_showdialog">Muestrame el Dialog</string>
+    <string name="button_pref">Ir a Preferences</string>
+    <string name="button_newlist">Ir a new List of Products</string>
+    <string name="button_navigation">Ir a Navigation</string>
+    <string name="button_recycle">Ir a Recycle Example</string>
+    <string name="button_httprequest">Ir a HTTP Request</string>
+    <string name="button_mymaps">Ir a Mis Mapas</string>
+    <string name="title_activity_settings">Configuraciones</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Mensajes</string>
+    <string name="sync_header">Sincronizacion</string>
+    <string name="order_header">Ordenar por</string>
+    <string name="day_header">Dia de compra</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Tu firma</string>
+    <string name="reply_title">Default reply action</string>
+    <string name="order_title">Order by options</string>
+    <string name="day_title">Day for reminder</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="title_activity_list_product">Lista de Productos</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Primer Fragment</string>
+    <string name="second_fragment_label">Segundo Fragment</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Previo</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_navigation_products">NavigationProductsActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Galeria</string>
+    <string name="menu_slideshow">Diapositivas</string>
+
+</resources>

@@ -17,6 +17,8 @@
     <string name="button_navigation">Go to Navigation</string>
     <string name="button_recycle">Go to Recycle Example</string>
     <string name="button_httprequest">Go to HTTP Request</string>
+    <string name="button_mymaps">Go to My Maps</string>
+
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
@@ -57,5 +59,6 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_mi_maps">MiMapsActivity</string>
 
 </resources>

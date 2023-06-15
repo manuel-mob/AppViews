@@ -16,6 +16,10 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.PointOfInterest;
+
+import java.util.ArrayList;
 import java.util.Date;
 
 import cl.mmoscoso.appviews.entity.Product;
@@ -129,6 +133,29 @@ public class MainActivity extends AppCompatActivity {
     public void goHttpRequest(View view){
         Intent HttpRequestActivity = new Intent(MainActivity.this,HTTPRequestActivity.class);
         startActivity(HttpRequestActivity);
+    }
+
+    public void goLanguageChange(View view){
+        Intent langActivity = new Intent(MainActivity.this,LanguageChangeActivity.class);
+        startActivity(langActivity);
+    }
+
+    public void goMyMaps(View view){
+        Intent myMapsActivity = new Intent(MainActivity.this,MyMapsActivity.class);
+
+        ArrayList<PointOfInterest> poiList = new ArrayList<>();
+        poiList.add(new PointOfInterest(
+                new LatLng(-35.42089166666666, -71.67676666666667),
+                "1",
+                "Kiosko"
+        ));
+        poiList.add(new PointOfInterest(
+                new LatLng(-35.42076, -71.67514666666666),
+                "2",
+                "Estadio"
+        ));
+        myMapsActivity.putParcelableArrayListExtra("poiList", poiList);
+        startActivity(myMapsActivity);
     }
 
     public void showDialog(View view){

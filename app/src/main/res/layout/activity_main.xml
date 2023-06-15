@@ -118,6 +118,13 @@
         android:onClick="goHttpRequest"
         android:text="@string/button_httprequest" />
 
+    <Button
+        android:id="@+id/buttonMaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="goMyMaps"
+        android:text="@string/button_mymaps" />
+
     <SeekBar
         android:id="@+id/idSeekBar"
         android:layout_width="match_parent"

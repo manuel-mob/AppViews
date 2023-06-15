@@ -6,4 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".HTTPRequestActivity">
 
+    <TextView
+        android:id="@+id/idNameCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="13dp"
+        android:text="@string/app_name"
+        android:textSize="48sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/idCapitalCountry"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/idCapitalCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="173dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/app_name"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/idProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idNameCountry" />
+
+    <ProgressBar
+        android:id="@+id/idProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="181dp"
+        android:layout_marginTop="301dp"
+        android:layout_marginEnd="182dp"
+        android:layout_marginBottom="382dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
